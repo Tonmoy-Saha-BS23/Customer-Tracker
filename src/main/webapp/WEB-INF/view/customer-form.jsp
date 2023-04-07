@@ -19,6 +19,7 @@
 		<center><h2>CRM - Customer Relationship Manager</h2></center>
 		<div class="form">
 			<form:form action="saveCustomer" modelAttribute="customer" method="post">
+				<form:hidden path="id"/>
 				<label>First name: </label><form:input path="firstaname"/>
 				<br><br>
 				

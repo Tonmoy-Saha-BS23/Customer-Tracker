@@ -20,14 +20,26 @@
 				<th>First Name</th>
 				<th>Last Name</th>
 				<th>Email</th>
-				<th>Action</th>
+				<th>Action</th> 
 			</thead>
 			<tbody>
-				<c:forEach var = "item" items="${customer}">
+				<c:forEach var = "item" items="${customer}"> 
+					<!-- Construct a update link -->
+					<c:url var="updateLink" value="updateForm"> 
+						<c:param name="customerId" value="${item.id}"/>
+					</c:url>
+					<!-- Construct a update link -->
+					<c:url var="deleteLink" value="/customer/deleteCustomer"> 
+						<c:param name="customerId" value="${item.id}"/>
+					</c:url>
 					<tr>
 						<td>${item.firstaname}</td>
 						<td>${item.lastName}</td>
 						<td>${item.email}</td>
+						<td><a href="${updateLink}">Update | </a>
+						<a href="${deleteLink}"
+						onclick="if(!(confirm('Are you sure you want to delete the user?'))) return false"> Delete </a>
+						</td>
 					</tr>
 	      		</c:forEach>
 			</tbody>

@@ -46,4 +46,22 @@ public class CustomerController {
 		customerService.saveCustomer(theCustomer);
 		return "redirect:/customer/list";
 	}
+	
+	@GetMapping("/updateForm")
+	public String updateForm(@ModelAttribute("customerId") int Id, 
+							Model theModel) {
+		// getting the customer
+		Customer theCustomer = customerService.getCustomer(Id);
+		
+		// binding the customer with the model
+		theModel.addAttribute("customer", theCustomer);
+		
+		return "customer-form";
+	}
+	
+	@GetMapping("/deleteCustomer")
+	public String deleteCustomer(@ModelAttribute("customerId") int id) {
+		customerService.deleteCustomer(id);
+		return "redirect:/customer/list";
+	}
 }

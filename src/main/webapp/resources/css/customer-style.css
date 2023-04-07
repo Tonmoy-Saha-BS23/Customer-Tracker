@@ -1,0 +1,50 @@
+@charset "ISO-8859-1";
+
+#Name{
+	width:80vw;
+	height:90vh;
+	margin:auto;
+	padding:10px;
+}
+
+table,td, tr, th{
+	border-collapse:collapse;
+	text-align:center;
+	padding:10px;
+	margin:auto;
+	cursor:pointer;
+}
+thead{
+	background-color:slategray
+}
+table{
+	width:80vw;
+}
+
+tbody tr:nth-child(odd){
+  background-color:lightcyan;
+}
+
+tbody tr:nth-child(even){
+	background-color:lightgrey;
+}
+
+h2{
+	background-color:lightseagreen;
+	padding:5px;
+}
+
+.btn{
+	padding:10px;
+	margin-bottom:20px;
+	background-color:cyan;
+	border:2px solid lightcyan;
+	border-radius:9px;
+	box-shadow: 2px 2px lightgray;
+	cursor:pointer;
+}
+
+.btn:hover{
+	font-weight:bold;
+	
+}

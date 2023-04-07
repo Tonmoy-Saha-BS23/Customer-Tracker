@@ -20,14 +20,13 @@ public class CustomerDaoImpl implements CustomerDao {
 	
 	
 	@Override
-	@Transactional
 	public List<Customer> getCustomers() {
 		// get the current session
 		Session currSession = sessionFactory.getCurrentSession();
 		
 		// getting the customer
 		Query<Customer> theQuery = 
-				currSession.createQuery("from customer", Customer.class);
+				currSession.createQuery("from Customer order by firstaname", Customer.class);
 		
 		// execute query and get the result list
 		List<Customer> customers = theQuery.getResultList();
@@ -35,6 +34,16 @@ public class CustomerDaoImpl implements CustomerDao {
 		return customers;
 		
 		
+	}
+
+
+	@Override
+	public void saveCustomer(Customer theCustomer) {
+		// get the current session
+		Session session = sessionFactory.getCurrentSession();
+		
+		// save the customer
+		session.save(theCustomer);
 	}
 
 }

@@ -1,0 +1,38 @@
+@charset "ISO-8859-1";
+
+.form{
+    width:70vw;
+    height:30vh;
+    border:1px solid;
+    margin:auto;
+    background-color:lightgray;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:3px 3px;
+}
+
+form{
+    width:50%;
+    margin:auto;
+}
+
+input{
+    width:200px;
+    height:25px;
+    border:1px solid black;
+    border-radius:5px;
+}
+
+.email{
+	margin-left:30px;
+}
+
+button{
+	width:100px;
+	padding:5px;
+	background-color:darkcyan;
+	margin-left:75px;
+	color:black;
+	border:1px solid black;
+	border-radius:5px;
+}
